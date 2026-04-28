@@ -13,6 +13,19 @@ feature_names = joblib.load('feature_names.pkl')
 # --- Streamlit UI ---
 st.set_page_config(page_title="Bucknell Lending Club", layout="centered")
 st.markdown("""
+    <style>
+    .stSlider [data-baseweb="slider"] [role="slider"] {
+        background-color: #E87722;
+    }
+    .stSlider [data-baseweb="slider"] [data-testid="stThumbValue"] {
+        color: #E87722;
+    }
+    .stSlider > div > div > div > div {
+        background: #E87722;
+    }
+    </style>
+""", unsafe_allow_html=True)
+st.markdown("""
     <div style='background-color:#E87722; padding:25px; border-radius:10px; text-align:center; margin-bottom:20px'>
         <h1 style='color:white; margin:0; font-size:2.2em'> Bucknell Lending Club </h1>
         <p style='color:white; margin:5px 0 0 0; font-size:1.1em'>Loan Decision Support Tool | ANOP 330</p>
