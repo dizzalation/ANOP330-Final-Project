@@ -23,6 +23,10 @@ st.markdown("""
     .stSlider > div > div > div > div {
         background: #E87722;
     }
+    [data-testid="stMetricValue"] {
+        color: #003366;
+        font-weight: bold;
+    }
     </style>
 """, unsafe_allow_html=True)
 st.markdown("""
