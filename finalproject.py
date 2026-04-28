@@ -85,8 +85,8 @@ if st.button("Predict"):
     fully_paid_prob = log_model.predict_proba(input_clf)[0][1]
     default_prob = 1 - fully_paid_prob
 
-     st.markdown(f"<h4 style='color:#003366'>Predicted Pessimistic Return: {expected_return:.2f}%</h4>", unsafe_allow_html=True)
-     st.markdown(f"<h4 style='color:#003366'>Probability of Full Repayment: {fully_paid_prob:.1%}</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='color:#003366'>Predicted Pessimistic Return: {expected_return:.2f}%</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h4 style='color:#003366'>Probability of Full Repayment: {fully_paid_prob:.1%}</h4>", unsafe_allow_html=True)
 
     if fully_paid_prob >= 0.75 and expected_return > 0:
         st.success("Recommendation: **FUND** — Low default risk and positive expected return.")
