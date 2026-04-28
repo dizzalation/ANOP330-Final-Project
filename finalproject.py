@@ -14,24 +14,14 @@ feature_names = joblib.load('feature_names.pkl')
 st.set_page_config(page_title="Bucknell Lending Club", layout="centered")
 st.markdown("""
     <style>
-    .stSlider [data-baseweb="slider"] [role="slider"] {
-        background-color: #E87722;
-    }
-    .stSlider [data-baseweb="slider"] [data-testid="stThumbValue"] {
-        color: #E87722;
-    }
     .stSlider > div > div > div > div {
         background: #E87722;
-    }
-    [data-testid="stMetricValue"] {
-        color: #003366;
-        font-weight: bold;
     }
     </style>
 """, unsafe_allow_html=True)
 st.markdown("""
     <div style='background-color:#E87722; padding:25px; border-radius:10px; text-align:center; margin-bottom:20px'>
-        <h1 style='color:white; margin:0; font-size:2.2em'> Bucknell Lending Club </h1>
+        <h1 style='color:white; margin:0; font-size:2.2em'>🦬 Bucknell Lending Club</h1>
         <p style='color:white; margin:5px 0 0 0; font-size:1.1em'>Loan Decision Support Tool | ANOP 330</p>
     </div>
 """, unsafe_allow_html=True)
@@ -85,8 +75,8 @@ if st.button("Predict"):
     fully_paid_prob = log_model.predict_proba(input_clf)[0][1]
     default_prob = 1 - fully_paid_prob
 
-    st.markdown(f"<h4 style='color:#003366'>Predicted Pessimistic Return: {expected_return:.2f}%</h4>", unsafe_allow_html=True)
-    st.markdown(f"<h4 style='color:#003366'>Probability of Full Repayment: {fully_paid_prob:.1%}</h4>", unsafe_allow_html=True)
+    st.write(f"Predicted Pessimistic Return: **{expected_return:.2f}%**")
+    st.write(f"Probability of Full Repayment: **{fully_paid_prob:.1%}**")
 
     if fully_paid_prob >= 0.75 and expected_return > 0:
         st.success("Recommendation: **FUND** — Low default risk and positive expected return.")
