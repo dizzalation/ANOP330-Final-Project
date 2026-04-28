@@ -12,7 +12,12 @@ feature_names = joblib.load('feature_names.pkl')
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="Bucknell Lending Club", layout="centered")
-st.title("Bucknell Lending Club Loan Decision Tool")
+st.markdown("""
+    <div style='background-color:#E87722; padding:25px; border-radius:10px; text-align:center; margin-bottom:20px'>
+        <h1 style='color:white; margin:0; font-size:2.2em'> Bucknell Lending Club </h1>
+        <p style='color:white; margin:5px 0 0 0; font-size:1.1em'>Loan Decision Support Tool | ANOP 330</p>
+    </div>
+""", unsafe_allow_html=True)
 st.markdown("Enter a potential borrower's details to predict their risk of default and expected return.")
 
 # User input
@@ -80,4 +85,8 @@ if st.button("Predict"):
     st.bar_chart(chart_data)
 
 st.markdown("---")
-st.markdown("**Bucknell Lending Club | ANOP 330 Final Project** | Powered by Streamlit")
+st.markdown("""
+    <div style='text-align:center; color:#E87722; font-weight:bold'>
+        Bucknell Lending Club | ANOP 330 Final Project | Powered by Streamlit
+    </div>
+""", unsafe_allow_html=True)
